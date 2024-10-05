@@ -1,0 +1,54 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    background-color: #333;
+    padding: 10px;
+}
+
+.menu li {
+    margin-right: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.carousel-inner {
+    position: relative;
+}
+
+.carousel-inner img {
+    width: 100%;
+    max-width: 600px;
+    display: none;
+}
+
+.carousel-inner img.active {
+    display: block;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* Centrar el contenido del menú */
+    margin: 0; /* Eliminar márgenes del ul */
+}
+
+nav ul li {
+    margin: 0 15px; /* Espacio entre los elementos */
+}
+
