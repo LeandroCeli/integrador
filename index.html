@@ -3,28 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Carrusel</title>
     <link rel="stylesheet" href="styles.css">
-    <title>Página Principal</title>
 </head>
 <body>
-    <nav>
-        <ul class="menu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="articulo.html">Artículos</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-    </nav>
-    
+    <header>
+        <nav class="navbar">
+            <ul class="nav-list">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="articulo.html">Artículo</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main></main>
+        <h1>Bienvenido al sitio</h1>
+        <p>Esta es la página principal.</p>
+    </main>
+
     <div class="carousel">
-        <div class="carousel-inner">
-            <img src="images/image1.jpg" alt="Imagen 1">
-            <img src="images/image2.jpg" alt="Imagen 2">
-            <img src="images/image3.jpg" alt="Imagen 3">
+        <div class="carousel-images">
+            <img src="img/chevrolet.jpg" alt="Imagen 1" class="carousel-image active">
+            <img src="img/ferarri.jpg" alt="Imagen 2" class="carousel-image">
+            <img src="img/bmw.jpg" alt="Imagen 3" class="carousel-image">
+            <img src="img/lambo.jpg" alt="Imagen 6" class="carousel-image">
+            <img src="img/tesla.jpg" alt="Imagen 5" class="carousel-image">
+            <img src="img/peugeot.jpg" alt="Imagen 6" class="carousel-image">
+            <img src="img/porsche.jpg" alt="Imagen 7" class="carousel-image">
+            <img src="img/audi.jpg" alt="Imagen 8" class="carousel-image">
+            <img src="img/vw.jpg" alt="Imagen 9" class="carousel-image">
+            <img src="img/ford.jpg" alt="Imagen 10" class="carousel-image">
         </div>
-        <button id="prev">Anterior</button>
-        <button id="next">Siguiente</button>
+        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
     </div>
+
     
-    <script src="script.js"></script>
+
+    <script src="test.js"></script>
 </body>
 </html>

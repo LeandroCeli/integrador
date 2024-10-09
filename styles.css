@@ -1,54 +1,81 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: linear-gradient(to right, rgb(155, 155, 155), rgb(176, 221, 247)); 
 }
 
-.menu {
-    display: flex;
-    list-style-type: none;
+header {
     background-color: #333;
-    padding: 10px;
 }
 
-.menu li {
-    margin-right: 20px;
+.navbar {
+    display: flex;
+    justify-content: center; /* Centrar el menú */
 }
 
-.menu a {
+.nav-list {
+    list-style: none;
+    padding: 0;
+    display: flex; /* Usar Flexbox */
+}
+
+.nav-list li {
+    margin: 0 15px; /* Espaciado entre elementos */
+}
+
+.nav-list a {
     color: white;
     text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-list a:hover {
+    background-color: #555; /* Cambio de color al pasar el ratón */
 }
 
 .carousel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.carousel-inner {
     position: relative;
-}
-
-.carousel-inner img {
-    width: 100%;
     max-width: 600px;
-    display: none;
+    margin: 20px auto;
+    overflow: hidden; /* Ocultar imágenes fuera de los límites */
 }
 
-.carousel-inner img.active {
-    display: block;
+.carousel-images {
+    display: flex; /* Usar Flexbox para alinear las imágenes */
+    transition: transform 0.5s ease; /* Transición suave */
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center; /* Centrar el contenido del menú */
-    margin: 0; /* Eliminar márgenes del ul */
+.carousel-image {
+    
+     /* display: none; /* Ocultar todas las imágenes por defecto */
+     min-width: 100%; /* Cada imagen ocupa el 100% del contenedor */
+     height: 400px; /* Ajusta la altura deseada */
+     object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
+     display: none; /* Ocultar todas las imágenes por defecto */
 }
 
-nav ul li {
-    margin: 0 15px; /* Espacio entre los elementos */
+.carousel-image.active {
+    display: block; /* Mostrar solo la imagen activa */
 }
 
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10; /* Asegurarse de que los botones estén por encima */
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
