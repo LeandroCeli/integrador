@@ -33,32 +33,32 @@ header {
 }
 
 .nav-list a:hover {
-    background-color: #555; /* Cambio de color al pasar el ratón */
+    background-color: #555; 
 }
 
 .carousel {
     position: relative;
     max-width: 600px;
     margin: 20px auto;
-    overflow: hidden; /* Ocultar imágenes fuera de los límites */
+    overflow: hidden; 
 }
 
 .carousel-images {
-    display: flex; /* Usar Flexbox para alinear las imágenes */
-    transition: transform 0.5s ease; /* Transición suave */
+    display: flex; 
+    transition: transform 0.5s ease; 
 }
 
 .carousel-image {
     
-     /* display: none; /* Ocultar todas las imágenes por defecto */
-     min-width: 100%; /* Cada imagen ocupa el 100% del contenedor */
-     height: 400px; /* Ajusta la altura deseada */
-     object-fit: cover; /* Mantiene la proporción de la imagen y recorta si es necesario */
-     display: none; /* Ocultar todas las imágenes por defecto */
+     
+     min-width: 100%; 
+     height: 400px; 
+     object-fit: cover; 
+     display: none; 
 }
 
 .carousel-image.active {
-    display: block; /* Mostrar solo la imagen activa */
+    display: block; 
 }
 
 .carousel-button {
@@ -69,7 +69,7 @@ header {
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 10; /* Asegurarse de que los botones estén por encima */
+    z-index: 10; 
 }
 
 .prev {

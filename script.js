@@ -1,9 +1,13 @@
+
+
 let currentSlide = 0;
+const intervalTime = 1500; // tiempo
 
 function showSlide(index) {
     const slides = document.querySelectorAll('.carousel-image');
-    if (index >= slides.length) currentSlide = 0; // Volver al primer slide
-    if (index < 0) currentSlide = slides.length - 1; // Volver al último slide
+    
+    if (index >= slides.length) currentSlide = 0; 
+    if (index < 0) currentSlide = slides.length - 1; 
 
     slides.forEach((slide, i) => {
         slide.classList.remove('active');
@@ -12,6 +16,19 @@ function showSlide(index) {
         }
     });
 }
+
+// Función para avanzar al siguiente slide
+function nextSlide() {
+    currentSlide++;
+    showSlide(currentSlide);
+}
+
+// Iniciar el carrusel
+setInterval(nextSlide, intervalTime);
+
+// Iniciar mostrando el primer slide
+showSlide(currentSlide);
+
 
 function moveSlide(step) {
     currentSlide += step;
