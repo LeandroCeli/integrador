@@ -38,7 +38,7 @@ function moveSlide(step) {
 // Mostrar el primer slide al cargar
 showSlide(currentSlide);
 
-
+/*
 document.getElementById('contactForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -79,3 +79,4 @@ document.getElementById('contactForm').addEventListener('submit', function(event
         document.getElementById('contactForm').reset();
     }
 });
+*/
