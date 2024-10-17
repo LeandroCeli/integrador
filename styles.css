@@ -61,7 +61,7 @@ html{
 #contenedorInicio{
     display: flex;
     justify-content: flex-start;
-    margin: 20px 0 0 300px;
+    margin: 20px 0 0 15%;
 }
 
 #contenidoInicio{
@@ -103,7 +103,7 @@ figcaption{
 
 .carrousel {
     position: relative;
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     overflow: hidden; 
 }
@@ -116,7 +116,7 @@ figcaption{
 .carousel-image {
         
      min-width: 100%; 
-     height: 400px; 
+     height: 500px; 
      object-fit: cover; 
      display: none; 
 }
@@ -154,7 +154,4 @@ figcaption{
 }
 textarea{
     resize: none;
-}
-form{
-    border: 2px solid #333;
 }
