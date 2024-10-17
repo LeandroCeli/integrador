@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,137 +8,214 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap">
+    <style>
+        h2 {
+            text-align: center;
+            border-radius: 18px;
+            border-left: 18px solid white;
+            padding: 15px 0;
+            background-color: #333;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 8px rgba(255, 255, 255, 0.835);
+        }
+
+        h3 {
+            text-align: center;
+            text-decoration: underline;
+            font-size: 22px;
+        }
+    </style>
 </head>
+
 <body>
-    
+
     <img src="img/CarView.jpg" alt="Imagen Portada" width="100%" height="400px">
     <header>
         <nav class="navbar">
             <ul class="nav-list">
-                <li><a href="index.html">Inicio</a></li>
+                <li class="seleccionado"><a href="index.html">Inicio</a></li>
                 <li><a href="articulo.html">Artículo</a></li>
                 <li><a href="contacto.html">Contacto</a></li>
             </ul>
         </nav>
     </header>
 
-    <div id="contenedor">
-        <div id="contenido">
-    <main>
-            <h1 style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: xxx-large;">Bienvenido a CarView</h1>
-            <p>Somos CarView, una pagina amante de los autos, su creacion e historia de las grandes marcas que hoy en dia
-                lideran el mundo Automotriz</p>
-            <img src="img/autos.jpg" alt="CarView" width="900px" style="margin-bottom: 30px;">                    
-    </main>
+    <div id="contenedorInicio">
+        <div id="contenidoInicio">
+            <main>
+                <h1
+                    style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: xxx-large;">
+                    Bienvenido a CarView</h1>
+                <p>Somos CarView, una pagina amante de los autos, su creacion e historia de las grandes marcas que hoy
+                    en dia
+                    lideran el mundo Automotriz</p>
+                <img src="img/autos.jpg" alt="CarView" width="900px" style="margin-bottom: 30px;">
+            </main>
 
-    <h2 id="HistoriaAutomovil">Historia de la Creación del Automóvil</h2>
-    <p>El automóvil, tal como lo conocemos hoy, es el resultado de una larga evolución de ideas, innovaciones y desarrollos técnicos que comenzaron a finales del siglo XVIII y principios del siglo XIX. Aunque los primeros vehículos eran de propulsión humana o animal, la búsqueda de un medio de transporte más eficiente llevó a inventores a experimentar con motores de vapor, electricidad y combustión interna.</p>
+            <h2 id="HistoriaAutomovil">Historia de la Creación del Automóvil</h2>
+            <p>El automóvil, tal como lo conocemos hoy, es el resultado de una larga evolución de ideas, innovaciones y
+                desarrollos técnicos que comenzaron a finales del siglo XVIII y principios del siglo XIX. Aunque los
+                primeros vehículos eran de propulsión humana o animal, la búsqueda de un medio de transporte más
+                eficiente llevó a inventores a experimentar con motores de vapor, electricidad y combustión interna.</p>
 
-    <h2 id="PrimerosPasos">Los Primeros Pasos: El Siglo XVIII y XIX</h2>
-    <p>El primer vehículo autopropulsado se atribuye a Nicolas-Joseph Cugnot, quien en 1769 creó un carro de vapor. Mientras los misioneros franciscanos enviados por Carlos III fundaban las primeras ciudades de California y el explorador James Cook
-    descubría Tahití, el ingeniero Joseph Cugnot desarrollaba en la Francia de Luis XV un sistema mecánico para transportar
-    las piezas de artillería hasta el campo de batalla. Fue el primer vehículo de la historia: un antepasado lejano del
-    coche.
-    
-    Cugnot aplicó los principios de la máquina de vapor, descrita un siglo antes por su compatriota Denis Papin y
-    perfeccionada en 1763 por el escocés James Watt, un invento que no tardaría en revolucionar el mundo dando paso a la era
-    industrial. </p>
+            <h2 id="PrimerosPasos">Los Primeros Pasos: El Siglo XVIII y XIX</h2>
+            <p>El primer vehículo autopropulsado se atribuye a Nicolas-Joseph Cugnot, quien en 1769 creó un carro de
+                vapor. Mientras los misioneros franciscanos enviados por Carlos III fundaban las primeras ciudades de
+                California y el explorador James Cook
+                descubría Tahití, el ingeniero Joseph Cugnot desarrollaba en la Francia de Luis XV un sistema mecánico
+                para transportar
+                las piezas de artillería hasta el campo de batalla. Fue el primer vehículo de la historia: un antepasado
+                lejano del
+                coche.
 
-    <p>Volviendo al carro de Cugnot, el primer vehículo motorizado se componía de un armón –normalmente tirado por caballos– al
-    que se adaptó una gran caldera donde el agua se calentaba con leña y producía vapor. Este último, al alcanzar
-    determinada presión, impulsaba los pistones de dos cilindros laterales que actuaban sobre unas ruedas dentadas. El
-    sistema, similar al usados en los relojes, transformaba así el movimiento lineal en circular al hacer girar la única
-    rueda tractora. </p>
+                Cugnot aplicó los principios de la máquina de vapor, descrita un siglo antes por su compatriota Denis
+                Papin y
+                perfeccionada en 1763 por el escocés James Watt, un invento que no tardaría en revolucionar el mundo
+                dando paso a la era
+                industrial. </p>
 
-    <figure>
-        <img src="img/primer-coche.png" alt="Imagen del Primer Auto" height="350px" width="750px">
-        <figcaption>Diseño del primer vehiculo de la historia</figcaption>
-    </figure>
-    
-    <p>Este vehículo, sin embargo, tenía limitaciones significativas y no fue práctico para el uso cotidiano. A
-    finales del siglo XIX, el desarrollo de motores de combustión interna, especialmente el motor de cuatro tiempos
-    inventado por <b>Nikolaus Otto</b> en 1876, marcó un hito crucial en la historia del automóvil. Nikolaus realizó notables estudios sobre el motor de gas y en 1872 llevó a la práctica la construcción del motor de combustión interna de cuatro tiempos. De este modo creó una máquina motriz estática a partir de la cual desarrollaría el <b>motor Otto</b>. Este se hizo famoso en todo el mundo como máquina para el accionamiento de vehículos, trenes, barcos y aviones. Este motor sirvió de base para la invención del motor diésel.
+            <p>Volviendo al carro de Cugnot, el primer vehículo motorizado se componía de un armón –normalmente tirado
+                por caballos– al
+                que se adaptó una gran caldera donde el agua se calentaba con leña y producía vapor. Este último, al
+                alcanzar
+                determinada presión, impulsaba los pistones de dos cilindros laterales que actuaban sobre unas ruedas
+                dentadas. El
+                sistema, similar al usados en los relojes, transformaba así el movimiento lineal en circular al hacer
+                girar la única
+                rueda tractora. </p>
 
-    En los 15 años siguientes se vendieron más de 50 000 motores, muchos de los cuales se emplearon en fábricas de maquinaria. En 1884, la patente de Otto se hizo pública.</p>
-    <figure>
-        <img src="img/PSM_V18_D500_An_american_internal_combustion_otto_engine.jpg" alt="Imagen del motor otto" height="470px" width="750px">
-        <figcaption>Diseño del motor Otto</figcaption>
-    </figure>
+            <figure>
+                <img src="img/primer-coche.png" alt="Imagen del Primer Auto" height="350px" width="750px">
+                <figcaption>Diseño del primer vehiculo de la historia</figcaption>
+            </figure>
+
+            <p>Este vehículo, sin embargo, tenía limitaciones significativas y no fue práctico para el uso cotidiano. A
+                finales del siglo XIX, el desarrollo de motores de combustión interna, especialmente el motor de cuatro
+                tiempos
+                inventado por <b>Nikolaus Otto</b> en 1876, marcó un hito crucial en la historia del automóvil. Nikolaus
+                realizó notables estudios sobre el motor de gas y en 1872 llevó a la práctica la construcción del motor
+                de combustión interna de cuatro tiempos. De este modo creó una máquina motriz estática a partir de la
+                cual desarrollaría el <b>motor Otto</b>. Este se hizo famoso en todo el mundo como máquina para el
+                accionamiento de vehículos, trenes, barcos y aviones. Este motor sirvió de base para la invención del
+                motor diésel.
+
+                En los 15 años siguientes se vendieron más de 50 000 motores, muchos de los cuales se emplearon en
+                fábricas de maquinaria. En 1884, la patente de Otto se hizo pública.</p>
+            <figure>
+                <img src="img/PSM_V18_D500_An_american_internal_combustion_otto_engine.jpg" alt="Imagen del motor otto"
+                    height="470px" width="750px">
+                <figcaption>Diseño del motor Otto</figcaption>
+            </figure>
 
 
-    <h2 id="HenryFord">Henry Ford: Pionero de la Industria Automotriz</h2>
-    <h3>Vida Temprana</h3>
-    <p>Henry Ford nació el 30 de julio de 1863 en Dearborn, Michigan, Estados Unidos. Desde joven mostró interés por la mecánica y la ingeniería, trabajando en la granja familiar antes de mudarse a Detroit para aprender sobre la maquinaria industrial. Su curiosidad y habilidades técnicas lo llevaron a trabajar en varias empresas de maquinaria antes de fundar su propia compañía.
-    </p>
-    
-    <h3>La Fundación de Ford Motor Company</h3>
-    <p>En 1903, Ford fundó la Ford Motor Company. Su visión era producir automóviles accesibles para el público en general, algo que era prácticamente inalcanzable en esa época. Antes de Ford, los automóviles eran considerados artículos de lujo, reservados para los ricos. Ford se propuso cambiar esto y hacer del automóvil un medio de transporte para las masas.</p>
+            <h2 id="HenryFord">Henry Ford: Pionero de la Industria Automotriz</h2>
+            <h3>Vida Temprana</h3>
+            <p>Henry Ford nació el 30 de julio de 1863 en Dearborn, Michigan, Estados Unidos. Desde joven mostró interés
+                por la mecánica y la ingeniería, trabajando en la granja familiar antes de mudarse a Detroit para
+                aprender sobre la maquinaria industrial. Su curiosidad y habilidades técnicas lo llevaron a trabajar en
+                varias empresas de maquinaria antes de fundar su propia compañía.
+            </p>
 
-    <figure>
-        <img src="img/202006011200006f5854ac430a7.png" alt="Primer logo de Ford" width="700px" height="450px">
-        <figcaption> Primer logo de Ford</figcaption>
-    </figure>
+            <h3>La Fundación de Ford Motor Company</h3>
+            <p>En 1903, Ford fundó la Ford Motor Company. Su visión era producir automóviles accesibles para el público
+                en general, algo que era prácticamente inalcanzable en esa época. Antes de Ford, los automóviles eran
+                considerados artículos de lujo, reservados para los ricos. Ford se propuso cambiar esto y hacer del
+                automóvil un medio de transporte para las masas.</p>
 
-    <h3>El Modelo T y la Producción en Cadena</h3>
-    <p>En 1908, Ford lanzó el Modelo T, un automóvil que se convirtió en un símbolo de la revolución industrial. Su diseño simple y robusto, junto con su precio asequible, permitió que millones de personas pudieran poseer un automóvil por primera vez. Sin embargo, la verdadera innovación de Ford fue la introducción de la producción en cadena en 1913. Este método de fabricación permitió a la Ford Motor Company producir vehículos a un ritmo nunca antes visto, reduciendo significativamente el costo de producción.</p>
-    <ul class="listas">
-        <li><b>Impacto de la Producción en Cadena:</b> La producción en cadena no solo revolucionó la industria automotriz, sino que también transformó la manufactura en general. Este sistema permitió que Ford fabricara el Modelo T en menos de 90 minutos, en comparación con los 12-15 horas que se necesitaban antes de su implementación. Esto llevó a una disminución en el precio del automóvil, que pasó de más de 850 dólares en 1908 a menos de 300 dólares en 1925.</li>
-    </ul>
-    <figure>
-        <img src="img/Ford T.jpeg" alt="Ford T" width="750px" height="450px">
-        <figcaption>Ford Modelo T 1908</figcaption>
-    </figure>
+            <figure>
+                <img src="img/202006011200006f5854ac430a7.png" alt="Primer logo de Ford" width="700px" height="450px">
+                <figcaption> Primer logo de Ford</figcaption>
+            </figure>
 
-    <h3>Innovaciones y Legado</h3>
-    <p>Ford fue pionero en varias innovaciones más allá de la producción en cadena. Introdujo el uso del acero de bajo
-        carbono y fue uno de los primeros en implementar el uso de neumáticos de aire en los automóviles. También fue un
-        defensor de la investigación y el desarrollo, estableciendo laboratorios de investigación para mejorar los procesos
-        de fabricación. </p>
-    
-    <p>El impacto de Henry Ford en la industria automotriz es incuestionable. No solo hizo que el automóvil fuera accesible
-        para el público en general, sino que también transformó la forma en que se fabrican los productos en todo el mundo.
-        Su legado perdura no solo a través de la Ford Motor Company, que sigue siendo uno de los principales fabricantes de
-        automóviles del mundo, sino también en la forma en que la producción en cadena ha influido en muchas industrias.</p>
+            <h3>El Modelo T y la Producción en Cadena</h3>
+            <p>En 1908, Ford lanzó el Modelo T, un automóvil que se convirtió en un símbolo de la revolución industrial.
+                Su diseño simple y robusto, junto con su precio asequible, permitió que millones de personas pudieran
+                poseer un automóvil por primera vez. Sin embargo, la verdadera innovación de Ford fue la introducción de
+                la producción en cadena en 1913. Este método de fabricación permitió a la Ford Motor Company producir
+                vehículos a un ritmo nunca antes visto, reduciendo significativamente el costo de producción.</p>
+            <ul class="listas">
+                <li><b>Impacto de la Producción en Cadena:</b> La producción en cadena no solo revolucionó la industria
+                    automotriz, sino que también transformó la manufactura en general. Este sistema permitió que Ford
+                    fabricara el Modelo T en menos de 90 minutos, en comparación con los 12-15 horas que se necesitaban
+                    antes de su implementación. Esto llevó a una disminución en el precio del automóvil, que pasó de más
+                    de 850 dólares en 1908 a menos de 300 dólares en 1925.</li>
+            </ul>
+            <figure>
+                <img src="img/Ford T.jpeg" alt="Ford T" width="750px" height="450px">
+                <figcaption>Ford Modelo T 1908</figcaption>
+            </figure>
 
-    <figure>
-        <img src="img/Henry Ford.jpeg" alt="Henry Ford">
-        <figcaption>Henry Ford, fundador de la compañía Ford Motor Company</figcaption>
-    </figure>
+            <h3>Innovaciones y Legado</h3>
+            <p>Ford fue pionero en varias innovaciones más allá de la producción en cadena. Introdujo el uso del acero
+                de bajo
+                carbono y fue uno de los primeros en implementar el uso de neumáticos de aire en los automóviles.
+                También fue un
+                defensor de la investigación y el desarrollo, estableciendo laboratorios de investigación para mejorar
+                los procesos
+                de fabricación. </p>
 
-    <h2 id="Innovacion">Innovaciones y Desarrollo</h2>
-    <p>A lo largo del siglo XX, la industria automotriz experimentó numerosas innovaciones. Desde el desarrollo de sistemas de frenos más seguros hasta la incorporación de tecnologías como la inyección electrónica y los sistemas de navegación GPS, los automóviles han evolucionado significativamente. Además, la seguridad y la eficiencia de combustible se convirtieron en prioridades, especialmente a partir de la crisis del petróleo de 1973, que impulsó la investigación de vehículos más eficientes y respetuosos con el medio ambiente.</p>
+            <p>El impacto de Henry Ford en la industria automotriz es incuestionable. No solo hizo que el automóvil
+                fuera accesible
+                para el público en general, sino que también transformó la forma en que se fabrican los productos en
+                todo el mundo.
+                Su legado perdura no solo a través de la Ford Motor Company, que sigue siendo uno de los principales
+                fabricantes de
+                automóviles del mundo, sino también en la forma en que la producción en cadena ha influido en muchas
+                industrias.</p>
 
-    <h2 id="Marcas">Marcas Icónicas en la Industria Automotriz</h2>
-    <p>La industria automotriz ha visto surgir y caer numerosas marcas a lo largo de su historia. Algunas de las más icónicas incluyen:
-    </p>
-    <ul class="listas">
-        <li><b>Ford:</b> Conocida por su producción en masa y por crear el primer automóvil accesible para las masas, Ford ha dejado una huella indeleble en la historia automotriz.</li><br>
+            <figure>
+                <img src="img/Henry Ford.jpeg" alt="Henry Ford">
+                <figcaption>Henry Ford, fundador de la compañía Ford Motor Company</figcaption>
+            </figure>
 
-        <li><b>General Motors (GM):</b> Fundada en 1908, GM es una de las compañías automotrices más grandes del mundo. A través de sus diversas marcas, como Chevrolet, Cadillac y Buick, ha innovado en diseño y tecnología.</li><br>
+            <h2 id="Innovacion">Innovaciones y Desarrollo</h2>
+            <p>A lo largo del siglo XX, la industria automotriz experimentó numerosas innovaciones. Desde el desarrollo
+                de sistemas de frenos más seguros hasta la incorporación de tecnologías como la inyección electrónica y
+                los sistemas de navegación GPS, los automóviles han evolucionado significativamente. Además, la
+                seguridad y la eficiencia de combustible se convirtieron en prioridades, especialmente a partir de la
+                crisis del petróleo de 1973, que impulsó la investigación de vehículos más eficientes y respetuosos con
+                el medio ambiente.</p>
 
-        <li><b>Volkswagen:</b> Fundada en 1937, Volkswagen es famosa por su modelo Beetle, que se convirtió en un ícono cultural. La empresa ha sido un líder en el desarrollo de vehículos eficientes y accesibles.</li><br>
+            <h2 id="Marcas">Marcas Icónicas en la Industria Automotriz</h2>
+            <p>La industria automotriz ha visto surgir y caer numerosas marcas a lo largo de su historia. Algunas de las
+                más icónicas incluyen:
+            </p>
+            <ul class="listas">
+                <li><b>Ford:</b> Conocida por su producción en masa y por crear el primer automóvil accesible para las
+                    masas, Ford ha dejado una huella indeleble en la historia automotriz.</li><br>
 
-        <li><b>Toyota:</b> Con su enfoque en la producción eficiente y la calidad, Toyota se ha destacado por su innovación, especialmente con el lanzamiento del Prius, el primer automóvil híbrido de producción masiva en 1997.</li><br>
+                <li><b>General Motors (GM):</b> Fundada en 1908, GM es una de las compañías automotrices más grandes del
+                    mundo. A través de sus diversas marcas, como Chevrolet, Cadillac y Buick, ha innovado en diseño y
+                    tecnología.</li><br>
 
-        <li><b>Mercedes-Benz:</b> Reconocida por su lujo y tecnología avanzada, Mercedes-Benz ha sido pionera en muchas innovaciones en la industria, incluidos los sistemas de seguridad activa y pasiva.</li><br>
-    </ul>
-    <div class="carrousel">
-        <div class="carousel-images">
-            <img src="img/chevrolet.jpg" alt="Imagen 1" class="carousel-image active">
-            <img src="img/ferarri.jpg" alt="Imagen 2" class="carousel-image">
-            <img src="img/bmw.jpg" alt="Imagen 3" class="carousel-image">
-            <img src="img/lambo.jpg" alt="Imagen 6" class="carousel-image">
-            <img src="img/tesla.jpg" alt="Imagen 5" class="carousel-image">
-            <img src="img/peugeot.jpg" alt="Imagen 6" class="carousel-image">
-            <img src="img/porsche.jpg" alt="Imagen 7" class="carousel-image">
-            <img src="img/audi.jpg" alt="Imagen 8" class="carousel-image">
-            <img src="img/vw.jpg" alt="Imagen 9" class="carousel-image">
-            <img src="img/ford.jpg" alt="Imagen 10" class="carousel-image">
-        </div>
-        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
+                <li><b>Volkswagen:</b> Fundada en 1937, Volkswagen es famosa por su modelo Beetle, que se convirtió en
+                    un ícono cultural. La empresa ha sido un líder en el desarrollo de vehículos eficientes y
+                    accesibles.</li><br>
+
+                <li><b>Toyota:</b> Con su enfoque en la producción eficiente y la calidad, Toyota se ha destacado por su
+                    innovación, especialmente con el lanzamiento del Prius, el primer automóvil híbrido de producción
+                    masiva en 1997.</li><br>
+
+                <li><b>Mercedes-Benz:</b> Reconocida por su lujo y tecnología avanzada, Mercedes-Benz ha sido pionera en
+                    muchas innovaciones en la industria, incluidos los sistemas de seguridad activa y pasiva.</li><br>
+            </ul>
+            <div class="carrousel">
+                <div class="carousel-images">
+                    <img src="img/chevrolet.jpg" alt="Imagen 1" class="carousel-image active">
+                    <img src="img/ferarri.jpg" alt="Imagen 2" class="carousel-image">
+                    <img src="img/bmw.jpg" alt="Imagen 3" class="carousel-image">
+                    <img src="img/lambo.jpg" alt="Imagen 6" class="carousel-image">
+                    <img src="img/tesla.jpg" alt="Imagen 5" class="carousel-image">
+                    <img src="img/peugeot.jpg" alt="Imagen 6" class="carousel-image">
+                    <img src="img/porsche.jpg" alt="Imagen 7" class="carousel-image">
+                    <img src="img/audi.jpg" alt="Imagen 8" class="carousel-image">
+                    <img src="img/vw.jpg" alt="Imagen 9" class="carousel-image">
+                    <img src="img/ford.jpg" alt="Imagen 10" class="carousel-image">
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
         </div>
         <div id="indice">
             <ol type="1">
@@ -147,10 +225,11 @@
                 <li><a href="#HenryFord">Henry Ford</a></li>
                 <li><a href="#Innovacion">Innovaciones</a></li>
                 <li><a href="#Marcas">Marcas Iconicas</a></li>
-            </ul>
+                </ul>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

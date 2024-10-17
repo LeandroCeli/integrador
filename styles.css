@@ -1,3 +1,5 @@
+/******************************************** GENERAL *******************************************/
+
 body {
     font-family: "Merriweather", sans-serif;
     font-weight: 400;
@@ -8,33 +10,9 @@ body {
     color: rgba(255, 255, 255, 0.835);
 } 
 
-html{
-    scroll-behavior: smooth;
-}
-
-p{
-    font-size: 20px;
-    margin-bottom: 40px;
-}
-
-h2{
-    text-align: center;
-    border-radius: 18px;
-    border-left: 18px solid white;
-    padding: 15px 0;
-    background-color: #333;
-    margin-bottom: 40px;
-    box-shadow: 0 2px 8px rgba(255, 255, 255, 0.835);
-}
-
-figcaption{
-    font-family: Arial, Helvetica, sans-serif; color: rgb(213, 213, 213);
-}
-
-h3{
-    text-align: center;
-    text-decoration: underline;
-    font-size: 22px;
+.seleccionado{
+    padding-bottom: 3px;
+    border-bottom:2px solid white;
 }
 
 header {
@@ -69,13 +47,24 @@ header {
     background-color: #555; 
 }
 
-#contenedor{
+/******************************************** PAGINA INICIO *****************************************/
+
+html{
+    scroll-behavior: smooth;
+}
+
+#contenedorInicio p{  
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+#contenedorInicio{
     display: flex;
     justify-content: flex-start;
     margin: 20px 0 0 300px;
 }
 
-#contenido{
+#contenidoInicio{
     max-width: 900px;
 }
 
@@ -95,9 +84,23 @@ header {
  padding: 10px;
 }
 
+#indice a{
+    text-decoration: none;
+}
+
+#indice a:hover, a:visited, a:active, a:focus{
+    color: white;
+    text-decoration: none;
+}
+
 .listas li{
     font-size: 18px;
 }
+
+figcaption{
+    font-family: Arial, Helvetica, sans-serif; color: rgb(213, 213, 213);
+}
+
 .carrousel {
     position: relative;
     max-width: 600px;
@@ -141,11 +144,17 @@ header {
     right: 10px;
 }
 
-a{
-    text-decoration: none;
-}
+/********************************** PAGINA CONTACTO ********************************************/
 
-a:hover, a:visited, a:active, a:focus{
-    color: white;
-    text-decoration: none;
+#contenedorContacto{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+textarea{
+    resize: none;
+}
+form{
+    border: 2px solid #333;
 }
