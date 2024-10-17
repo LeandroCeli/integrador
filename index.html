@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap">
-    <style>        
+    <style>
+            
         h2 {
             text-align: center;
             border-radius: 18px;
@@ -49,15 +50,7 @@
                 <a href="articulo.html">Articulo</a>
                 <a href="contacto.html">Contacto</a>
             </div>  
-
-                <span style="font-size:30px;cursor:pointer;position: fixed; left: 0;" onclick="openNav()">&#9776;</span>
-           <!--
-            <ul class="nav-list">
-                <li class="seleccionado"><a href="index.html">Inicio</a></li>
-                <li><a href="articulo.html">Artículo</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-            -->
+                <span id="barraLateral" onclick="openNav()">&#9776;</span>
         </nav>
     </header>
     
@@ -67,7 +60,7 @@
         <div id="contenidoInicio">
             <main>
                 <h1
-                    style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: xxx-large;">
+                    style="text-align: center; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: xxx-large; margin-top: 0;">
                     Bienvenido a CarView</h1>
                 <p>Somos CarView, una pagina amante de los autos, su creacion e historia de las grandes marcas que hoy
                     en dia
@@ -222,35 +215,24 @@
                 <li><b>Mercedes-Benz:</b> Reconocida por su lujo y tecnología avanzada, Mercedes-Benz ha sido pionera en
                     muchas innovaciones en la industria, incluidos los sistemas de seguridad activa y pasiva.</li><br>
             </ul>
-            <div class="carrousel">
-                <div class="carousel-images">
-                    <a href="articulo.html">  <img src="img/chevrolet.jpg" alt="Imagen 1" class="carousel-image active"> </a>
-                    <img src="img/ferarri.jpg" alt="Imagen 2" class="carousel-image">
-                    <img src="img/bmw.jpg" alt="Imagen 3" class="carousel-image">
-                    <img src="img/lambo.jpg" alt="Imagen 6" class="carousel-image">
-                    <img src="img/tesla.jpg" alt="Imagen 5" class="carousel-image">
-                    <img src="img/peugeot.jpg" alt="Imagen 6" class="carousel-image">
-                    <img src="img/porsche.jpg" alt="Imagen 7" class="carousel-image">
-                    <img src="img/audi.jpg" alt="Imagen 8" class="carousel-image">
-                    <img src="img/vw.jpg" alt="Imagen 9" class="carousel-image">
-                    <img src="img/ford.jpg" alt="Imagen 10" class="carousel-image">
-                </div>
-                <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-                <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
-            </div>
+            
         </div>
-       <!--
-        <div id="indice">
-            <ol type="1">
-                <h3 style="font-family: Arial, Helvetica, sans-serif; margin-top: 0; text-align: left;">ÍNDICE</h3>
-                <li><a href="#HistoriaAutomovil">Historia de la Creación del Automóvil</a></li>
-                <li><a href="#PrimerosPasos">Primeros Pasos</a></li>
-                <li><a href="#HenryFord">Henry Ford</a></li>
-                <li><a href="#Innovacion">Innovaciones</a></li>
-                <li><a href="#Marcas">Marcas Iconicas</a></li>
-                </ul>
+    </div>
+    <div class="carrousel">
+        <div class="carousel-images">
+            <a href="articulo.html">  <img src="img/chevrolet.jpg" alt="Imagen 1" class="carousel-image active"> </a>
+            <img src="img/ferarri.jpg" alt="Imagen 2" class="carousel-image">
+            <img src="img/bmw.jpg" alt="Imagen 3" class="carousel-image">
+            <img src="img/lambo.jpg" alt="Imagen 6" class="carousel-image">
+            <img src="img/tesla.jpg" alt="Imagen 5" class="carousel-image">
+            <img src="img/peugeot.jpg" alt="Imagen 6" class="carousel-image">
+            <img src="img/porsche.jpg" alt="Imagen 7" class="carousel-image">
+            <img src="img/audi.jpg" alt="Imagen 8" class="carousel-image">
+            <img src="img/vw.jpg" alt="Imagen 9" class="carousel-image">
+            <img src="img/ford.jpg" alt="Imagen 10" class="carousel-image">
         </div>
-        -->
+        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
     </div>
 </body>
 
