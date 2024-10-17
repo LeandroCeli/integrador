@@ -72,7 +72,7 @@ header {
 #contenedor{
     display: flex;
     justify-content: flex-start;
-    margin: 20px 0 0 300px;
+    margin: 20px 0 0 15%;
 }
 
 #contenido{
@@ -100,7 +100,7 @@ header {
 }
 .carrousel {
     position: relative;
-    max-width: 600px;
+    max-width: 800px;
     margin: 20px auto;
     overflow: hidden; 
 }
@@ -113,7 +113,7 @@ header {
 .carousel-image {
         
      min-width: 100%; 
-     height: 400px; 
+     height: 500px; 
      object-fit: cover; 
      display: none; 
 }
@@ -148,4 +148,80 @@ a{
 a:hover, a:visited, a:active, a:focus{
     color: white;
     text-decoration: none;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown .dropbtn {
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    text-decoration: none;
+    padding: 8px 32px;
+}
+
+.dropdown-content {
+    display: none;
+    position: relative;
+    background-color: rgba(34, 34, 34, 0.9);
+    padding: 0;
+    left: 20px; /* Desplazamiento a la izquierda */
+    margin-top: 10px; /* Espacio por encima */
+}
+
+.dropdown-content a {
+    padding: 8px 32px;
+    font-size: 20px;
+    color: #818181;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

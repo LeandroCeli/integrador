@@ -1,7 +1,7 @@
 
 
 let currentSlide = 0;
-const intervalTime = 1500; // tiempo
+const intervalTime = 5000; // tiempo
 
 function showSlide(index) {
     const slides = document.querySelectorAll('.carousel-image');
@@ -37,6 +37,21 @@ function moveSlide(step) {
 
 // Mostrar el primer slide al cargar
 showSlide(currentSlide);
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function toggleDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+}
+
 
 /*
 document.getElementById('contactForm').addEventListener('submit', function(event) {

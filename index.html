@@ -9,9 +9,30 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
+<script src="script.js"></script>
 <body>
     
-    <img src="img/CarView.jpg" alt="Imagen Portada" width="100%" height="400px">
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <div class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn" onclick="toggleDropdown()">Inicio</a>
+            <div class="dropdown-content">
+               <lu><a href="#HistoriaAutomovil">Historia</a></lu>
+               <lu><a href="#PrimerosPasos">Primeros Paso</a></lu>
+               <lu><a href="#HenryFord">Henry Ford</a></lu> 
+               <lu><a href="#Innovacion">Innovaciones</a></lu> 
+               <lu><a href="#Marcas">Marcas Iconicas</a></lu> 
+
+            </div>
+        </div>
+        <a href="articulo.html">Articulo</a>
+        <a href="contacto.html">Contacto</a>
+    </div>
+    <header>
+        <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+    </header>
+    <!--
     <header>
         <nav class="navbar">
             <ul class="nav-list">
@@ -21,6 +42,10 @@
             </ul>
         </nav>
     </header>
+    
+    -->
+    
+    <img src="img/CarView.jpg" alt="Imagen Portada" width="100%" height="400px">
 
     <div id="contenedor">
         <div id="contenido">
@@ -124,7 +149,7 @@
     </ul>
     <div class="carrousel">
         <div class="carousel-images">
-            <img src="img/chevrolet.jpg" alt="Imagen 1" class="carousel-image active">
+            <a href="articulo.html">  <img src="img/chevrolet.jpg" alt="Imagen 1" class="carousel-image active"> </a>
             <img src="img/ferarri.jpg" alt="Imagen 2" class="carousel-image">
             <img src="img/bmw.jpg" alt="Imagen 3" class="carousel-image">
             <img src="img/lambo.jpg" alt="Imagen 6" class="carousel-image">
@@ -139,6 +164,7 @@
         <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
     </div>
         </div>
+       <!--
         <div id="indice">
             <ol type="1">
                 <h3 style="font-family: Arial, Helvetica, sans-serif; margin-top: 0; text-align: left;">ÍNDICE</h3>
@@ -149,8 +175,9 @@
                 <li><a href="#Marcas">Marcas Iconicas</a></li>
             </ul>
         </div>
+       -->
     </div>
 
-    <script src="script.js"></script>
+    
 </body>
 </html>
