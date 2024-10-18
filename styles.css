@@ -138,6 +138,8 @@ figcaption{
     max-width: 800px;
     margin: 20px auto;
     overflow: hidden; 
+    display: flex; /* Asegúrate de que el contenedor sea un flexbox */
+    justify-content: center; /* Centra el carrusel */
 }
 
 .carousel-images {
