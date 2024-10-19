@@ -1,5 +1,5 @@
 /******************************************** GENERAL *******************************************/
-html{
+html {
     scroll-behavior: smooth;
 }
 
@@ -9,11 +9,11 @@ body {
     font-style: normal;
     margin: 0;
     padding: 0;
-    background: linear-gradient(to right, rgb(75, 74, 74), rgb(143, 143, 143)); 
+    background: linear-gradient(to right, rgb(75, 74, 74), rgb(143, 143, 143));
     color: rgba(255, 255, 255, 0.835);
-} 
+}
 
-#barraLateral{
+#barraLateral {
     font-size: 30px;
     cursor: pointer;
     position: fixed;
@@ -57,8 +57,13 @@ body {
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding-top: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px;
+    }
 }
 
 .dropdown {
@@ -78,8 +83,10 @@ body {
     position: relative;
     background-color: rgba(34, 34, 34, 0.9);
     padding: 0;
-    left: 20px; /* Desplazamiento a la izquierda */
-    margin-top: 10px; /* Espacio por encima */
+    left: 20px;
+    /* Desplazamiento a la izquierda */
+    margin-top: 10px;
+    /* Espacio por encima */
 }
 
 .dropdown-content a {
@@ -101,66 +108,73 @@ body {
 /******************************************** PAGINA INICIO *****************************************/
 
 
-#contenedorInicio{
+#contenedorInicio {
     display: flex;
     justify-content: flex-start;
     margin: 20px 0 0 20%;
 }
 
-#contenedorInicio p{  
+#contenedorInicio p {
     font-size: 20px;
     margin-bottom: 40px;
 }
 
 
-#contenidoInicio{
+#contenidoInicio {
     max-width: 900px;
 }
 
-.listas li{
+.listas li {
     font-size: 18px;
 }
 
-figure{
+figure {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
-figure img{
+
+figure img {
     margin-bottom: 10px;
 }
-figcaption{
-    font-family: Arial, Helvetica, sans-serif; color: rgb(213, 213, 213);
+
+figcaption {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(213, 213, 213);
 }
 
 .carrousel {
     position: relative;
     max-width: 800px;
     margin: 20px auto;
-    overflow: hidden; 
-    display: flex; /* Asegúrate de que el contenedor sea un flexbox */
-    justify-content: center; /* Centra el carrusel */
+    overflow: hidden;
+    display: flex;
+    /* Asegúrate de que el contenedor sea un flexbox */
+    justify-content: center;
+    /* Centra el carrusel */
 }
 
 .carousel-images {
-    display: flex; 
-    transition: transform 0.5s ease; 
+    display: flex;
+    transition: transform 0.5s ease;
 }
 
 .carousel-image {
-        
-     min-width: 100%; 
-     height: 500px; 
-     object-fit: cover; 
-     display: none; 
-     filter: grayscale(100%);
+
+    min-width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: none;
+    filter: grayscale(100%);
 }
 
 .carousel-image:hover {
-    filter: grayscale(0%); /* Restablece el color al pasar el mouse */
+    filter: grayscale(0%);
+    /* Restablece el color al pasar el mouse */
 }
+
 .carousel-image.active {
-    display: block; 
+    display: block;
 }
 
 .carousel-button {
@@ -171,7 +185,7 @@ figcaption{
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 10; 
+    z-index: 10;
 }
 
 .prev {
@@ -184,47 +198,170 @@ figcaption{
 
 /********************************** PAGINA CONTACTO ********************************************/
 
-#contenedorContacto{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
+#Formulario h1 {
+    margin-bottom: 1.5rem;
+    color: #afafaf;
 }
-textarea{
-    resize: none;
+
+#Formulario li,
+#Formulario .grid>*:not(:last-child) {
+    margin-bottom: 1.5rem;
 }
+
+#Formulario input,
+#Formulario textarea,
+#Formulario button {
+    width: 100%;
+    line-height: 1.5;
+    padding: 15px 10px;
+    border: 1px solid hsl(0, 0%, 10%);
+    color: #afafaf;
+    background: hsl(0, 0%, 14%);
+    transition: background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+        transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+#Formulario textarea {
+    height: 170px;
+}
+
+#Formulario ::placeholder {
+    color: inherit;
+    opacity: 1;
+}
+
+#Formulario input:focus,
+#Formulario textarea:focus,
+#Formulario button:enabled:hover,
+#Formulario button:focus,
+#Formulario input[type="checkbox"]:focus+label {
+    background: hsl(0, 7%, 20%);
+}
+
+#Formulario input:focus,
+#Formulario textarea:focus {
+    transform: scale(1.02);
+}
+
+#Formulario *:required {
+    background-repeat: no-repeat;
+    background-position: center right 12px;
+    background-size: 15px 15px;
+}
+
+#Formulario *:required {
+    background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg);
+}
+
+#Formulario *:disabled {
+    cursor: default;
+    filter: blur(2px);
+}
+#Formulario input[type="checkbox"] {
+    position: absolute;
+    left: -9999px;
+}
+
+#Formulario input[type="checkbox"]+label {
+    position: relative;
+    display: inline-block;
+    padding-left: 2rem;
+    transition: background 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+}
+
+#Formulario input[type="checkbox"]+label::before,
+#Formulario input[type="checkbox"]+label::after {
+    content: '';
+    position: absolute;
+}
+
+#Formulario input[type="checkbox"]+label::before {
+    left: 0;
+    top: 6px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #afafaf;
+}
+
+#Formulario input[type="checkbox"]:checked+label::before {
+    background: #e31b23;
+}
+
+#Formulario input[type="checkbox"]:checked+label::after {
+    left: 7px;
+    top: 7px;
+    width: 6px;
+    height: 14px;
+    border-bottom: 2px solid #afafaf;
+    border-right: 2px solid #afafaf;
+    transform: rotate(45deg);
+}
+
+#Formulario .requerido {
+    display: none;
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg) no-repeat center left / 15px 15px;
+    padding-left: 20px;
+}
+
+#Formulario .boton-grid {
+    position: relative;
+    overflow: hidden;
+    transition: filter 0.2s;
+}
+
+#Formulario button {
+    font-weight: bold;
+}
+
 /**************************************PAGINA ARTICULOS **************************************/
 
 .flex-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que las columnas se envuelvan en caso de espacio limitado */
-    justify-content: space-between; /* Espaciado uniforme entre columnas */
-    margin: 20px 0; /* Margen entre secciones */
+    flex-wrap: wrap;
+    /* Permite que las columnas se envuelvan en caso de espacio limitado */
+    justify-content: space-between;
+    /* Espaciado uniforme entre columnas */
+    margin: 20px 0;
+    /* Margen entre secciones */
 }
 
 .flex-item {
-    flex: 1; /* Permite que los elementos ocupen el mismo espacio */
-    margin: 10px; /* Espaciado entre columnas */
-    min-width: 300px; /* Ancho mínimo para cada columna */
-    background-color: rgba(255, 255, 255, 0.1); /* Fondo para distinguir columnas */
-    padding: 15px; /* Espaciado interno */
-    border-radius: 10px; /* Bordes redondeados */
+    flex: 1;
+    /* Permite que los elementos ocupen el mismo espacio */
+    margin: 10px;
+    /* Espaciado entre columnas */
+    min-width: 300px;
+    /* Ancho mínimo para cada columna */
+    background-color: rgba(255, 255, 255, 0.1);
+    /* Fondo para distinguir columnas */
+    padding: 15px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
 }
 
 .header-container {
     display: flex;
-    align-items: center; /* Centra verticalmente */
-    justify-content: center; /* Centra horizontalmente */
-    margin: 20px 0; /* Espacio alrededor */
+    align-items: center;
+    /* Centra verticalmente */
+    justify-content: center;
+    /* Centra horizontalmente */
+    margin: 20px 0;
+    /* Espacio alrededor */
 }
 
 .header-container .logo {
-    width: 50px; /* Ajusta el tamaño de la imagen */
-    height: auto; /* Mantiene la proporción */
-    margin-right: 10px; /* Espacio entre la imagen y el texto */
+    width: 50px;
+    /* Ajusta el tamaño de la imagen */
+    height: auto;
+    /* Mantiene la proporción */
+    margin-right: 10px;
+    /* Espacio entre la imagen y el texto */
 }
 
 h1 {
-    font-size: 2em; /* Tamaño del texto del título */
-    color: white; /* Cambia el color según tu diseño */
+    font-size: 2em;
+    /* Tamaño del texto del título */
+    color: white;
+    /* Cambia el color según tu diseño */
 }
