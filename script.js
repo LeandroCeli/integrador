@@ -53,55 +53,106 @@ function toggleDropdown() {
 }
 
 
-/*
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
-    const messageDiv = document.getElementById('message');
-
-    // Validaciones
-    let errors = [];
-
-    // Validación del nombre
-    if (name.length < 3) {
-        errors.push("El nombre debe tener al menos 3 caracteres.");
-    }
-
-    // Validación del correo electrónico
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        errors.push("Por favor, ingrese un correo electrónico válido.");
-    }
-
-    // Validación del teléfono
-    const phonePattern = /^\d{10}$/; // Cambia según el formato requerido
-    if (!phonePattern.test(phone)) {
-        errors.push("El teléfono debe contener 10 dígitos.");
-    }
-
-    // Mostrar mensajes
-    if (errors.length > 0) {
-        messageDiv.innerHTML = errors.join('<br>');
-        messageDiv.style.color = 'red';
-    } else {
-        messageDiv.innerHTML = `Nombre: ${name}<br>Correo: ${email}<br>Teléfono: ${phone}`;
-        messageDiv.style.color = 'green';
-
-        // Limpiar el formulario
-        document.getElementById('contactForm').reset();
-    }
-});
-*/
-
-const checkbox = document.querySelector('#Formulario input[type="checkbox"]');
+const checkbox = document.querySelector('#terminos');
 const btns = document.querySelectorAll("#Formulario button");
+const formulario = document.querySelector('#Formulario');
 
 checkbox.addEventListener("change", function() {
-  const checked = this.checked;
-  for (const btn of btns) {
-    checked ? (btn.disabled = false) : (btn.disabled = true);
-  }
+    const checked = this.checked;
+
+    // Habilitar o deshabilitar los botones
+    for (const btn of btns) {
+        btn.disabled = !checked; // Si está marcado, habilitar; de lo contrario, deshabilitar
+    }
+
+    // Validar el campo "Nombre" al cambiar el checkbox
+    const nombre = document.querySelector('#nombre').value.trim();
+    const mensajeNombre = document.querySelector('#mensaje-nombre');
+
+    if (!checked) {
+        // Si el checkbox no está marcado, limpiar los mensajes
+        mensajeNombre.textContent = '';
+    } else {
+        // Validar el nombre si el checkbox está marcado
+        if (!nombre) {
+            mensajeNombre.textContent = 'El nombre es requerido.';
+            btns.forEach(btn => btn.disabled = true); // Deshabilitar botones si hay error
+        } else {
+            mensajeNombre.textContent = ''; // Limpiar mensaje si está correcto
+        }
+    }
+
+    // Validar el campo "apellido" al cambiar el checkbox
+    const apellido = document.querySelector('#apellido').value.trim();
+    const mensajeapellido = document.querySelector('#mensaje-apellido');
+
+    if (!checked) {
+        // Si el checkbox no está marcado, limpiar los mensajes
+        mensajeNombre.textContent = '';
+    } else {
+        // Validar el apellido  si el checkbox está marcado
+        if (!apellido) {
+            mensajeapellido.textContent = 'El apellido es requerido.';
+            btns.forEach(btn => btn.disabled = true); // Deshabilitar botones si hay error
+        } else {
+            mensajeapellido.textContent = ''; // Limpiar mensaje si está correcto
+        }
+    }
+
+
+// Validar el campo "email" al cambiar el checkbox
+const email = document.querySelector('#email').value.trim();
+const mensajeEmail= document.querySelector('#mensaje-email');
+
+if (!checked) {
+    // Si el checkbox no está marcado, limpiar los mensajes
+    mensajeNombre.textContent = '';
+} else {
+    // Validar el apellido  si el checkbox está marcado
+    if (!email) {
+        mensajeEmail.textContent = 'El Telefono  es requerido.';
+        btns.forEach(btn => btn.disabled = true); // Deshabilitar botones si hay error
+    } else {
+        mensajeEmail.textContent = ''; // Limpiar mensaje si está correcto
+    }
+
+
+}
+
 });
+
+// Validación al enviar el formulario
+formulario.addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío nativo del formulario
+
+    const nombre = document.querySelector('#nombre').value.trim();
+    const mensajeNombre = document.querySelector('#mensaje-nombre');
+    const errores = [];
+
+    // Validación del campo "Nombre"
+    if (!nombre) {
+        errores.push('El nombre es requerido.');
+        mensajeNombre.textContent = 'El nombre es requerido.';
+    } else {
+        mensajeNombre.textContent = ''; // Limpiar mensaje si está correcto
+    }
+
+    // Aquí puedes agregar más validaciones para otros campos...
+
+    // Si no hay errores, procesar el formulario
+    if (errores.length === 0) {
+        console.log('Formulario enviado correctamente');
+        // Aquí puedes manejar los datos enviados, mostrar resultados, etc.
+    }
+});
+
+
+
+
+
+
+ 
+
+
+
+
