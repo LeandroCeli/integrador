@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap">
+    <link rel="icon" href="img/favicon_corrected_64x64.png" type="image/png">
     <title>Contacto</title>
     <style>
         * {
@@ -79,29 +80,7 @@
             }
         }
 
-        .mensaje-validacion {
-            color: red; /* Color para mensajes de error */
-            font-size: 0.9em; /* Tamaño de fuente más pequeño */
-            margin-top: 0.5rem; /* Espacio entre el input y el mensaje */
-        }
-     .resultado {
-    margin-top: 50px;
-    padding: 15px;
-    background-color: #292a2b; /*  fondo suave */
-    border: 1px solid #ddd; 
-    border-radius: 5px; /* Bordes redondeados */
-    color: #f3ecec; /* texto */
-}
-
-.resultado h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-}
-
-.resultado p {
-    margin: 5px 0; /* Espacio entre párrafos */
-}
-
+        
     </style>
     <script src="script.js" defer></script>
 </head>
@@ -129,11 +108,11 @@
                 <li>
                     <div class="grid grid-2">
                         <div>
-                            <input id="nombre" type="text" placeholder="Nombre*" >
+                            <input id="nombre" type="text" placeholder="Nombre">
                             <div class="mensaje-validacion" id="mensaje-nombre"></div>
                         </div>
                         <div>
-                            <input id="apellido" type="text" placeholder="Apellido*" >
+                            <input id="apellido" type="text" placeholder="Apellido">
                             <div class="mensaje-validacion" id="mensaje-apellido"></div>
                         </div>
                     </div>
@@ -141,13 +120,13 @@
                 <li>
                     <div class="grid grid-2">
                         <div>
-                            <input id="email" type="text" placeholder="Email*" >
+                            <input id="email" type="text" placeholder="Email">
                             <div class="mensaje-validacion" id="mensaje-email"></div>
                         </div>
                         <div>
-                            <input id="telefono" type="text" placeholder="Telefono" >
+                            <input id="telefono" type="text" placeholder="Telefono">
                             <div class="mensaje-validacion" id="mensaje-telefono"></div>
-                        </div>  
+                        </div>
                     </div>
                 </li>
                 <li>
@@ -155,7 +134,8 @@
                 </li>
                 <li>
                     <input type="checkbox" id="terminos">
-                    <label for="terminos">He leído y estoy de acuerdo con <a href="">los términos y condiciones.</a></label>
+                    <label for="terminos">He leído y estoy de acuerdo con <a href="">los términos y
+                            condiciones.</a></label>
                 </li>
                 <li>
                     <div class="grid grid-3">
@@ -168,8 +148,23 @@
         </div>
     </form>
 
-    
+
     <div id="resultado" class="resultado"></div>
+    <footer>
+        <div>
+          <p>© 2024 Carview. Todos los derechos reservados.</p>
+          <ul>
+            <li><a href="">Política de Privacidad</a></li>
+            <li><a href="">Términos y Condiciones</a></li>
+            <li><a href="/contacto.html">Contacto</a></li>
+          </ul>
+          <div class="Redes-sociales">
+            <a href="">Facebook</a>
+            <a href="">Twitter</a>
+            <a href="">Instagram</a>
+          </div>
+        </div>
+      </footer>
 </body>
 
 </html>

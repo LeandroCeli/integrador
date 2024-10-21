@@ -105,6 +105,33 @@ body {
     display: block;
 }
 
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+footer .Redes-sociales a {
+    margin: 0 10px;
+    color: white;
+}
+
 /******************************************** PAGINA INICIO *****************************************/
 
 
@@ -161,7 +188,7 @@ figcaption {
 
 .carousel-image {
 
-    min-width: 100%;
+    width: 760px;
     height: 500px;
     object-fit: cover;
     display: none;
@@ -181,11 +208,14 @@ figcaption {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 255, 255, 0.8);
+    color: rgb(0, 0, 0);
+    background-color: rgb(234, 234, 234);
     border: none;
     cursor: pointer;
-    padding: 10px;
+    padding: 7px 10px;
     z-index: 10;
+    border-radius: 12px;
+    transform: scale(1.6);
 }
 
 .prev {
@@ -243,13 +273,17 @@ figcaption {
     transform: scale(1.02);
 }
 
-#Formulario *:required {
+#Formulario #nombre,
+#Formulario #apellido,
+#Formulario #email {
     background-repeat: no-repeat;
     background-position: center right 12px;
     background-size: 15px 15px;
 }
 
-#Formulario *:required {
+#Formulario #nombre,
+#Formulario #apellido,
+#Formulario #email {
     background-image: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/asterisk.svg);
 }
 
@@ -257,6 +291,7 @@ figcaption {
     cursor: default;
     filter: blur(2px);
 }
+
 #Formulario input[type="checkbox"] {
     position: absolute;
     left: -9999px;
@@ -313,6 +348,35 @@ figcaption {
     font-weight: bold;
 }
 
+.mensaje-validacion {
+    color: red;
+    /* Color para mensajes de error */
+    font-size: 0.9em;
+    /* Tamaño de fuente más pequeño */
+    margin-top: 0.5rem;
+    /* Espacio entre el input y el mensaje */
+}
+
+.resultado {
+    margin-top: 50px;
+    padding: 15px;
+    background-color: #292a2b;
+    /*  fondo suave */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    color: #f3ecec;
+    /* texto */
+}
+
+.resultado h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.resultado p {
+    margin: 5px 0;
+    /* Espacio entre párrafos */
+}
 /**************************************PAGINA ARTICULOS **************************************/
 
 .flex-container {

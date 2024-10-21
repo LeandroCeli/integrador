@@ -1,5 +1,19 @@
+/*********************************** GENERAL **********************************************/
 
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+}
 
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
+
+function toggleDropdown() {
+    const dropdownContent = document.querySelector('.dropdown-content');
+    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
+}
+
+/*********************************** PAGINA INICIO ****************************************/
 let currentSlide = 0;
 const intervalTime = 5000; // tiempo
 
@@ -38,20 +52,7 @@ function moveSlide(step) {
 // Mostrar el primer slide al cargar
 showSlide(currentSlide);
 
-
-function openNav() {
-    document.getElementById("mySidenav").style.width = "250px";
-}
-
-function closeNav() {
-    document.getElementById("mySidenav").style.width = "0";
-}
-
-function toggleDropdown() {
-    const dropdownContent = document.querySelector('.dropdown-content');
-    dropdownContent.style.display = dropdownContent.style.display === 'block' ? 'none' : 'block';
-}
-
+/************************************* PAGINA CONTACTO *********************************************/
 
 const checkbox = document.querySelector('#terminos');
 const btns = document.querySelectorAll("#Formulario button");
@@ -136,6 +137,7 @@ if (!checked) {
 });
 
 
+
 formulario.addEventListener('submit', function(event) {
     event.preventDefault(); // Evitar que se envíe el formulario
 
@@ -197,6 +199,7 @@ formulario.addEventListener('submit', function(event) {
             <p><strong>Teléfono:</strong> ${telefono || 'No proporcionado'}</p>
             
         `;
+        resultadoDiv.style.border = "1px solid #ddd";
         formulario.reset(); // Limpia los campos
        
     }
