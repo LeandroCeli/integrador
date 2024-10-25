@@ -177,16 +177,24 @@ formulario.addEventListener('submit', function(event) {
         mensajeEmail.textContent = ''; // Limpiar mensaje si está correcto
     }
 
-    // Validar el campo "Teléfono" (opcional) pero si ingresa q sea valido lo ingresado 
-    const telefono = document.querySelector('#telefono').value.trim();
-    const mensajeTelefono = document.querySelector('#mensaje-telefono');
-    const regexTelefono = /^\d{10}$/; // Solo números y longitud de 10 dígitos
-    if (telefono && !regexTelefono.test(telefono)) {
-        mensajeTelefono.textContent = 'El teléfono debe ser numérico y tener 10 dígitos.';
+    // Validar el campo "Teléfono" (opcional) pero si ingresa que sea válido lo ingresado 
+const telefono = document.querySelector('#telefono').value.trim();
+const mensajeTelefono = document.querySelector('#mensaje-telefono');
+const regexTelefono = /^\d+$/; // Solo números
+
+if (telefono) {
+    if (!regexTelefono.test(telefono)) {
+        mensajeTelefono.textContent = 'El teléfono debe contener solo números.';
+        isValid = false;
+    } else if (telefono.length < 10 || telefono.length > 15) { 
+        mensajeTelefono.textContent = 'El teléfono debe tener entre 10 y 15 dígitos.';
         isValid = false;
     } else {
         mensajeTelefono.textContent = ''; // Limpiar mensaje si está correcto
     }
+}
+    // Captura el mensaje
+    const mensaje = document.querySelector('#mensaje').value.trim();
 
     // Si todo es válido, mostrar los datos enviados
     if (isValid) {
@@ -197,7 +205,7 @@ formulario.addEventListener('submit', function(event) {
             <p><strong>Apellido:</strong> ${apellido}</p>
             <p><strong>Email:</strong> ${email}</p>
             <p><strong>Teléfono:</strong> ${telefono || 'No proporcionado'}</p>
-            
+             <p><strong>Mensaje:</strong> ${mensaje || 'No proporcionado'}</p>
         `;
         resultadoDiv.style.border = "1px solid #ddd";
         formulario.reset(); // Limpia los campos
