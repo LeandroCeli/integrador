@@ -14,43 +14,53 @@ function toggleDropdown() {
 }
 
 /*********************************** PAGINA INICIO ****************************************/
-let currentSlide = 0;
+const imagenes =[
+    { src: "img/chevrolet2.jpg", link: "articulo.html#chevrolet", alt: "Imagen 1" },
+    { src: "img/ferarri2.jpg", link: "articulo.html#ferrari", alt: "Imagen 2" },
+    { src: "img/bmw2.jpg", link: "articulo.html#bmw", alt: "Imagen 3" },
+    { src: "img/lambo2.jpg", link: "articulo.html#lambo", alt: "Imagen 4" },
+    { src: "img/tesla2.jpg", link: "articulo.html#tesla", alt: "Imagen 5" },
+    { src: "img/peugeot2.jpg", link: "articulo.html#peugeot", alt: "Imagen 6" },
+    { src: "img/porsche.jpg", link: "articulo.html#porsche", alt: "Imagen 7" },
+    { src: "img/audi.jpg", link: "articulo.html#audi", alt: "Imagen 8" },
+    { src: "img/vw2.jpg", link: "articulo.html#volkswagwen", alt: "Imagen 9" },
+    { src: "img/ford2.jpg", link: "articulo.html#ford", alt: "Imagen 10" },
+    { src: "img/Mercedes.jpg", link: "articulo.html#mercedes", alt: "Imagen 11" },
+    { src: "img/toyota.jpg", link: "articulo.html#toyota", alt: "Imagen 12" },
+    { src: "img/fiat.jpg", link: "articulo.html#fiat", alt: "Imagen 13" },
+];
+
+let currentIndex = 0;
 const intervalTime = 5000; // tiempo
 
-function showSlide(index) {
-    const slides = document.querySelectorAll('.carousel-image');
-    
-    if (index >= slides.length) currentSlide = 0; 
-    if (index < 0) currentSlide = slides.length - 1; 
+function ActualizarCarousel() {
+    const imagenElemento = document.getElementById('carousel-image');
+    const linkElemento = document.getElementById('carousel-link');
 
-    slides.forEach((slide, i) => {
-        slide.classList.remove('active');
-        if (i === currentSlide) {
-            slide.classList.add('active');
-        }
-    });
+    // Actualiza el enlace y la imagen usando el índice actual
+    linkElemento.href = imagenes[currentIndex].link;
+    imagenElemento.src = imagenes[currentIndex].src;
+    imagenElemento.alt = imagenes[currentIndex].alt;
 }
 
 // Función para avanzar al siguiente slide
 function nextSlide() {
-    currentSlide++;
-    showSlide(currentSlide);
+    currentIndex = (currentIndex + 1) % imagenes.length;
+    ActualizarCarousel();
 }
+
+function previousSlide() {
+    currentIndex = (currentIndex - 1 + imagenes.length) % imagenes.length;
+    ActualizarCarousel();
+}
+
+document.querySelector('.next').addEventListener('click', nextSlide);
+document.querySelector('.prev').addEventListener('click', previousSlide);
 
 // Iniciar el carrusel
 setInterval(nextSlide, intervalTime);
 
-// Iniciar mostrando el primer slide
-showSlide(currentSlide);
-
-
-function moveSlide(step) {
-    currentSlide += step;
-    showSlide(currentSlide);
-}
-
-// Mostrar el primer slide al cargar
-showSlide(currentSlide);
+ActualizarCarousel();
 
 /************************************* PAGINA CONTACTO *********************************************/
 
