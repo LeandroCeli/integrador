@@ -14,7 +14,8 @@ function toggleDropdown() {
 }
 
 /*********************************** PAGINA INICIO ****************************************/
-const imagenes =[
+// Array de imágenes y enlaces
+const imagenes = [
     { src: "img/chevrolet2.jpg", link: "articulo.html#chevrolet", alt: "Imagen 1" },
     { src: "img/ferarri2.jpg", link: "articulo.html#ferrari", alt: "Imagen 2" },
     { src: "img/bmw2.jpg", link: "articulo.html#bmw", alt: "Imagen 3" },
@@ -31,195 +32,209 @@ const imagenes =[
 ];
 
 let currentIndex = 0;
-const intervalTime = 5000; // tiempo
+const intervalTime = 5000; // tiempo en milisegundos
 
+// Función para actualizar el carrusel
 function ActualizarCarousel() {
     const imagenElemento = document.getElementById('carousel-image');
     const linkElemento = document.getElementById('carousel-link');
 
-    // Actualiza el enlace y la imagen usando el índice actual
-    linkElemento.href = imagenes[currentIndex].link;
-    imagenElemento.src = imagenes[currentIndex].src;
-    imagenElemento.alt = imagenes[currentIndex].alt;
+    if (imagenElemento && linkElemento) { // Comprobar si los elementos existen
+        linkElemento.href = imagenes[currentIndex].link;
+        imagenElemento.src = imagenes[currentIndex].src;
+        imagenElemento.alt = imagenes[currentIndex].alt;
+    }
 }
 
-// Función para avanzar al siguiente slide
+// Función para el siguiente slide
 function nextSlide() {
     currentIndex = (currentIndex + 1) % imagenes.length;
     ActualizarCarousel();
 }
 
+// Función para el slide anterior
 function previousSlide() {
     currentIndex = (currentIndex - 1 + imagenes.length) % imagenes.length;
     ActualizarCarousel();
 }
 
-document.querySelector('.next').addEventListener('click', nextSlide);
-document.querySelector('.prev').addEventListener('click', previousSlide);
+// Inicializa el carrusel
+function initCarousel() {
+    const nextButton = document.querySelector('.next');
+    const prevButton = document.querySelector('.prev');
 
-// Iniciar el carrusel
-setInterval(nextSlide, intervalTime);
+    if (nextButton) {
+        nextButton.addEventListener('click', nextSlide);
+    }
 
-ActualizarCarousel();
+    if (prevButton) {
+        prevButton.addEventListener('click', previousSlide);
+    }
+
+    
+    if (nextButton || prevButton) {
+        setInterval(nextSlide, intervalTime);
+        ActualizarCarousel();
+    }
+}
+
+//DOM esté completamente cargado
+document.addEventListener('DOMContentLoaded', initCarousel);
+
+
 
 /************************************* PAGINA CONTACTO *********************************************/
 
-const checkbox = document.querySelector('#terminos');
-const btns = document.querySelectorAll("#Formulario button");
-const formulario = document.querySelector('#Formulario');
+document.addEventListener('DOMContentLoaded', () => {
+    const checkbox = document.querySelector('#terminos');
 
-checkbox.addEventListener("change", function() {
-    const checked = this.checked;
+    // Solo añadir el evento si el checkbox existe
+    if (checkbox) {
+        const btns = document.querySelectorAll("#Formulario button");
+        const formulario = document.querySelector('#Formulario');
 
-    // Habilitar o deshabilitar los botones
-    for (const btn of btns) {
-        btn.disabled = !checked; // Si está marcado, habilitar; de lo contrario, deshabilitar
-    }
+        if (formulario) { // Comprobar si el formulario existe
+            checkbox.addEventListener("change", function() {
+                const checked = this.checked;
 
-    // Validar el campo "Nombre" al cambiar el checkbox
-    const nombre = document.querySelector('#nombre').value.trim();
-    const mensajeNombre = document.querySelector('#mensaje-nombre');
+                // Habilitar o deshabilitar los botones
+                for (const btn of btns) {
+                    btn.disabled = !checked;
+                }
 
-    if (!checked) {
-        // Si el checkbox no está marcado, limpiar los mensajes
-        mensajeNombre.textContent = '';
-    } else {
-        // Validar el nombre si el checkbox está marcado
-        if (!nombre) {
-            mensajeNombre.textContent = 'El nombre es requerido.';
-            checkbox.checked = false;
-            btns.forEach(btn => btn.disabled = true); // Deshabilitar botones si hay error
-        } else {
-            mensajeNombre.textContent = ''; // Limpiar mensaje si está correcto
+                // Validar el campo "Nombre"
+                const nombre = document.querySelector('#nombre').value.trim();
+                const mensajeNombre = document.querySelector('#mensaje-nombre');
+
+                if (!checked) {
+                    mensajeNombre.textContent = '';
+                } else {
+                    if (!nombre) {
+                        mensajeNombre.textContent = 'El nombre es requerido.';
+                        checkbox.checked = false;
+                        btns.forEach(btn => btn.disabled = true);
+                    } else {
+                        mensajeNombre.textContent = ''; 
+                    }
+                }
+
+                // Validar el campo "Apellido"
+                const apellido = document.querySelector('#apellido').value.trim();
+                const mensajeApellido = document.querySelector('#mensaje-apellido');
+
+                if (!checked) {
+                    mensajeApellido.textContent = '';
+                } else {
+                    if (!apellido) {
+                        mensajeApellido.textContent = 'El apellido es requerido.';
+                        checkbox.checked = false;
+                        btns.forEach(btn => btn.disabled = true);
+                    } else {
+                        mensajeApellido.textContent = '';
+                    }
+                }
+
+                // Validar el campo "Email"
+                const email = document.querySelector('#email').value.trim();
+                const mensajeEmail = document.querySelector('#mensaje-email');
+                const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!checked) {
+                    mensajeEmail.textContent = '';
+                } else {
+                    if (!email) {
+                        mensajeEmail.textContent = 'El Email es requerido.';
+                        checkbox.checked = false;
+                        btns.forEach(btn => btn.disabled = true);
+                    } else if (!regexEmail.test(email)) {
+                        mensajeEmail.textContent = 'El Email no es válido.';
+                        checkbox.checked = false;
+                        btns.forEach(btn => btn.disabled = true);
+                    } else {
+                        mensajeEmail.textContent = '';
+                    }
+                }
+            });
         }
     }
 
-    // Validar el campo "apellido" al cambiar el checkbox
-    const apellido = document.querySelector('#apellido').value.trim();
-    const mensajeapellido = document.querySelector('#mensaje-apellido');
+    const formulario = document.querySelector('#Formulario');
 
-    if (!checked) {
-        // Si el checkbox no está marcado, limpiar los mensajes
-        mensajeNombre.textContent = '';
-    } else {
-        // Validar el apellido  si el checkbox está marcado
-        if (!apellido) {
-            mensajeapellido.textContent = 'El apellido es requerido.';
-            checkbox.checked = false;
+    if (formulario) { // Comprobar si el formulario existe
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault(); // Evitar que se envíe el formulario
 
-            btns.forEach(btn => btn.disabled = true); // Deshabilitar botones si hay error
-        } else {
-            mensajeapellido.textContent = ''; // Limpiar mensaje si está correcto
-        }
-    }
+            let isValid = true; 
 
+            // Validar "Nombre"
+            const nombre = document.querySelector('#nombre').value.trim();
+            const mensajeNombre = document.querySelector('#mensaje-nombre');
+            if (!nombre) {
+                mensajeNombre.textContent = 'El nombre es requerido.';
+                isValid = false;
+            } else {
+                mensajeNombre.textContent = ''; 
+            }
 
-// Validar el campo "email" al cambiar el checkbox
-const email = document.querySelector('#email').value.trim();
-const mensajeEmail= document.querySelector('#mensaje-email');
-const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            // Validar "Apellido"
+            const apellido = document.querySelector('#apellido').value.trim();
+            const mensajeApellido = document.querySelector('#mensaje-apellido');
+            if (!apellido) {
+                mensajeApellido.textContent = 'El apellido es requerido.';
+                isValid = false;
+            } else {
+                mensajeApellido.textContent = ''; 
+            }
 
-if (!checked) {
-    // Si el checkbox no está marcado, limpiar los mensajes
-    mensajeNombre.textContent = '';
-} else {
-    // Validar el apellido  si el checkbox está marcado
-    if (!email) 
-    {
-        mensajeEmail.textContent = 'El Email   es requerido.';
-        checkbox.checked = false;
-        btns.forEach(btn => btn.disabled = true); // Deshabilitar botones si hay error
-    } else 
-    {
-        if (!regexEmail.test(email)) 
-        {
-            mensajeEmail.textContent = 'El Email no es válido.';
-            checkbox.checked = false;
-            btns.forEach(btn => btn.disabled = true); // Deshabilitar botones si hay error
-        } 
-        else
-        {
-            mensajeEmail.textContent = ''; // Limpiar mensaje si está correcto
-        }
-        
-    }
-}
-});
+            // Validar "Email"
+            const email = document.querySelector('#email').value.trim();
+            const mensajeEmail = document.querySelector('#mensaje-email');
+            const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email) {
+                mensajeEmail.textContent = 'El Email es requerido.';
+                isValid = false;
+            } else if (!regexEmail.test(email)) {
+                mensajeEmail.textContent = 'El Email no es válido.';
+                isValid = false;
+            } else {
+                mensajeEmail.textContent = ''; 
+            }
 
+            // Validar "Teléfono" (opcional)
+            const telefono = document.querySelector('#telefono').value.trim();
+            const mensajeTelefono = document.querySelector('#mensaje-telefono');
+            const regexTelefono = /^\d+$/;
 
+            if (telefono) {
+                if (!regexTelefono.test(telefono)) {
+                    mensajeTelefono.textContent = 'El teléfono debe contener solo números.';
+                    isValid = false;
+                } else if (telefono.length < 10 || telefono.length > 15) { 
+                    mensajeTelefono.textContent = 'El teléfono debe tener entre 10 y 15 dígitos.';
+                    isValid = false;
+                } else {
+                    mensajeTelefono.textContent = ''; 
+                }
+            }
 
-formulario.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evitar que se envíe el formulario
+            // Captura el mensaje
+            const mensaje = document.querySelector('#mensaje').value.trim();
 
-    let isValid = true; 
-
-    // Validar "Nombre"
-    const nombre = document.querySelector('#nombre').value.trim();
-    const mensajeNombre = document.querySelector('#mensaje-nombre');
-    if (!nombre) {
-        mensajeNombre.textContent = 'El nombre es requerido.';
-        isValid = false;
-    } else {
-        mensajeNombre.textContent = ''; // Limpiar mensaje si está correcto
-    }
-
-    // Validar  "Apellido"
-    const apellido = document.querySelector('#apellido').value.trim();
-    const mensajeApellido = document.querySelector('#mensaje-apellido');
-    if (!apellido) {
-        mensajeApellido.textContent = 'El apellido es requerido.';
-        isValid = false;
-    } else {
-        mensajeApellido.textContent = ''; // Limpiar mensaje si está correcto
-    }
-
-    // Validar "Email"
-    const email = document.querySelector('#email').value.trim();
-    const mensajeEmail = document.querySelector('#mensaje-email');
-    const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email) {
-        mensajeEmail.textContent = 'El Email es requerido.';
-        isValid = false;
-    } else if (!regexEmail.test(email)) {
-        mensajeEmail.textContent = 'El Email no es válido.';
-        isValid = false;
-    } else {
-        mensajeEmail.textContent = ''; // Limpiar mensaje si está correcto
-    }
-
-    // Validar el campo "Teléfono" (opcional) pero si ingresa que sea válido lo ingresado 
-const telefono = document.querySelector('#telefono').value.trim();
-const mensajeTelefono = document.querySelector('#mensaje-telefono');
-const regexTelefono = /^\d+$/; // Solo números
-
-if (telefono) {
-    if (!regexTelefono.test(telefono)) {
-        mensajeTelefono.textContent = 'El teléfono debe contener solo números.';
-        isValid = false;
-    } else if (telefono.length < 10 || telefono.length > 15) { 
-        mensajeTelefono.textContent = 'El teléfono debe tener entre 10 y 15 dígitos.';
-        isValid = false;
-    } else {
-        mensajeTelefono.textContent = ''; // Limpiar mensaje si está correcto
-    }
-}
-    // Captura el mensaje
-    const mensaje = document.querySelector('#mensaje').value.trim();
-
-    // Si todo es válido, mostrar los datos enviados
-    if (isValid) {
-        const resultadoDiv = document.querySelector('#resultado');
-        resultadoDiv.innerHTML = `
-            <h2>Datos Enviados</h2>
-            <p><strong>Nombre:</strong> ${nombre}</p>
-            <p><strong>Apellido:</strong> ${apellido}</p>
-            <p><strong>Email:</strong> ${email}</p>
-            <p><strong>Teléfono:</strong> ${telefono || 'No proporcionado'}</p>
-             <p><strong>Mensaje:</strong> ${mensaje || 'No proporcionado'}</p>
-        `;
-        resultadoDiv.style.border = "1px solid #ddd";
-        formulario.reset(); // Limpia los campos
-       
+            // Si todo es válido, mostrar los datos enviados
+            if (isValid) {
+                const resultadoDiv = document.querySelector('#resultado');
+                resultadoDiv.innerHTML = `
+                    <h2>Datos Enviados</h2>
+                    <p><strong>Nombre:</strong> ${nombre}</p>
+                    <p><strong>Apellido:</strong> ${apellido}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Teléfono:</strong> ${telefono || 'No proporcionado'}</p>
+                    <p><strong>Mensaje:</strong> ${mensaje || 'No proporcionado'}</p>
+                `;
+                resultadoDiv.style.border = "1px solid #ddd";
+                formulario.reset(); // Limpia los campos
+            }
+        });
     }
 });
 
